@@ -283,6 +283,9 @@ typedef struct {
 } libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction_DONATION_REQUEST;
 typedef struct {
   libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction_SIGNATURE_CAPTURE_REQUEST;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
 } libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction_RefundType;
 typedef struct {
   libpaymentpos_KNativePtr pinned;
@@ -651,6 +654,7 @@ typedef struct {
                 } Companion;
                 struct {
                   libpaymentpos_KType* (*_type)(void);
+                  const char* (*get_code)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_Error_Types thiz);
                   struct {
                     libpaymentpos_kref_com_ecopaynet_module_paymentpos_Error_Types (*get)(); /* enum entry for DEVICE_INCORRECT_DATA. */
                   } DEVICE_INCORRECT_DATA;
@@ -789,6 +793,9 @@ typedef struct {
                   struct {
                     libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction (*get)(); /* enum entry for DONATION_REQUEST. */
                   } DONATION_REQUEST;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction (*get)(); /* enum entry for SIGNATURE_CAPTURE_REQUEST. */
+                  } SIGNATURE_CAPTURE_REQUEST;
                   struct {
                     libpaymentpos_KType* (*_type)(void);
                     const char* (*getValue)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction_RefundType thiz);
