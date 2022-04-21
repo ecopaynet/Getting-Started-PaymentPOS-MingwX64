@@ -271,6 +271,48 @@ typedef struct {
 } libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Initialization_DeviceChangeValidationType_ALLOW_DEVICE_CHANGE;
 typedef struct {
   libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_SPANISH;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_ENGLISH;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_CATALAN;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_FRENCH;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_GERMAN;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_ITALIAN;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_PORTUGUESE;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_BASQUE;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_GALICIAN;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_VALENCIAN;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Ticket;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Ticket_HEADER_LOGO;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Ticket_LANGUAGE;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
 } libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction;
 typedef struct {
   libpaymentpos_KNativePtr pinned;
@@ -284,6 +326,9 @@ typedef struct {
 typedef struct {
   libpaymentpos_KNativePtr pinned;
 } libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction_SIGNATURE_CAPTURE_REQUEST;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction_LANGUAGE;
 typedef struct {
   libpaymentpos_KNativePtr pinned;
 } libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction_RefundType;
@@ -783,6 +828,51 @@ typedef struct {
                 } Initialization;
                 struct {
                   libpaymentpos_KType* (*_type)(void);
+                  const char* (*get_code)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language thiz);
+                  const char* (*getValue)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language thiz);
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for SPANISH. */
+                  } SPANISH;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for ENGLISH. */
+                  } ENGLISH;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for CATALAN. */
+                  } CATALAN;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for FRENCH. */
+                  } FRENCH;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for GERMAN. */
+                  } GERMAN;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for ITALIAN. */
+                  } ITALIAN;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for PORTUGUESE. */
+                  } PORTUGUESE;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for BASQUE. */
+                  } BASQUE;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for GALICIAN. */
+                  } GALICIAN;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for VALENCIAN. */
+                  } VALENCIAN;
+                } Language;
+                struct {
+                  libpaymentpos_KType* (*_type)(void);
+                  const char* (*getValue)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Ticket thiz);
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Ticket (*get)(); /* enum entry for HEADER_LOGO. */
+                  } HEADER_LOGO;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Ticket (*get)(); /* enum entry for LANGUAGE. */
+                  } LANGUAGE;
+                } Ticket;
+                struct {
+                  libpaymentpos_KType* (*_type)(void);
                   const char* (*getValue)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction thiz);
                   struct {
                     libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction (*get)(); /* enum entry for CUSTOMER_REFERENCE. */
@@ -796,6 +886,9 @@ typedef struct {
                   struct {
                     libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction (*get)(); /* enum entry for SIGNATURE_CAPTURE_REQUEST. */
                   } SIGNATURE_CAPTURE_REQUEST;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction (*get)(); /* enum entry for LANGUAGE. */
+                  } LANGUAGE;
                   struct {
                     libpaymentpos_KType* (*_type)(void);
                     const char* (*getValue)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Transaction_RefundType thiz);
@@ -934,7 +1027,9 @@ typedef struct {
                   libpaymentpos_KBoolean (*creditNote_)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_KLong amount, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_Transaction eventListener, libpaymentpos_kref_kotlin_collections_HashMap extraParameters);
                   libpaymentpos_KBoolean (*creditNoteReversal)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_KLong amount, const char* operationNumber, const char* authorizationCode, libpaymentpos_kref_kotlinx_datetime_LocalDate transactionDate, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_Transaction eventListener);
                   const char* (*generateCardholderTransactionTicketText)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult transactionResult);
+                  const char* (*generateCardholderTransactionTicketText_)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult transactionResult, libpaymentpos_kref_kotlin_collections_HashMap extraParameters);
                   const char* (*generateCommerceTransactionTicketText)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult transactionResult);
+                  const char* (*generateCommerceTransactionTicketText_)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult transactionResult, libpaymentpos_kref_kotlin_collections_HashMap extraParameters);
                   libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionList (*getCommerceTransactionsList)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_kref_kotlinx_datetime_LocalDateTime maxDate);
                   libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionList (*getDeviceTransactionsList)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_kref_kotlinx_datetime_LocalDateTime maxDate);
                   libpaymentpos_kref_com_ecopaynet_module_paymentpos_Information (*getInformation)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz);
