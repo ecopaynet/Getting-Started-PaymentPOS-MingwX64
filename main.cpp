@@ -36,12 +36,9 @@ void onTransactionComplete(void* thiz, void* transactionResultPtr) {
 
     libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult transactionResult = lib->kotlin.root.com.ecopaynet.module.paymentpos.NativeTools.unwrapTransactionResultPointer(transactionResultPtr);
 
-    libpaymentpos_kref_kotlin_collections_List tickets = lib->kotlin.root.com.ecopaynet.module.paymentpos.PaymentPOS.Companion.generateTransactionTicketsText(paymentPOS, transactionResult);
-
-    int ticketsCount = lib->kotlin.root.com.ecopaynet.module.paymentpos.NativeTools.getStringListSize(tickets);
-    if (ticketsCount > 0) {
-        const char* ticket = lib->kotlin.root.com.ecopaynet.module.paymentpos.NativeTools.getStringListElement(tickets, 0);
-        std::cout << ticket << endl;
+    const char *ticketCommerce = lib->kotlin.root.com.ecopaynet.module.paymentpos.PaymentPOS.Companion.generateCommerceTransactionTicketText(paymentPOS, transactionResult);
+    if (ticketCommerce != NULL) {
+        std::cout << ticketCommerce << endl;
     }
 
     lastSaleTransactionResult.pinned = transactionResult.pinned;
@@ -88,7 +85,6 @@ bool initialization() {
     libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_Initialization initializationEventsListener = { .pinned = initializationEventsImpl.pinned };
 
     libpaymentpos_kref_kotlin_collections_HashMap extraParameters = lib->kotlin.root.com.ecopaynet.module.paymentpos.NativeTools.newExtraParameters();
-    lib->kotlin.root.com.ecopaynet.module.paymentpos.NativeTools.addExtraParametersItem(extraParameters, "LANGUAGE", "en-GB"); //Spanish if not specified
 
     if (lib->kotlin.root.com.ecopaynet.module.paymentpos.PaymentPOS.Companion.initialize_(paymentPOS, deviceCast, initializationEventsListener, extraParameters)) {
         std::cout << "Initializing library..." << endl;

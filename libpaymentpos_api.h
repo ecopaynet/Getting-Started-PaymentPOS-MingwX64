@@ -88,6 +88,27 @@ typedef struct {
 } libpaymentpos_kref_kotlinx_serialization_KSerializer;
 typedef struct {
   libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType_AMEX;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType_CREDIT;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType_CHARGE_CARD;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType_DEBIT;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType_DINNERS;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType_OTHER;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
 } libpaymentpos_kref_com_ecopaynet_module_paymentpos_Currency;
 typedef struct {
   libpaymentpos_KNativePtr pinned;
@@ -302,6 +323,12 @@ typedef struct {
 typedef struct {
   libpaymentpos_KNativePtr pinned;
 } libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_VALENCIAN;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_BRAZILIAN;
+typedef struct {
+  libpaymentpos_KNativePtr pinned;
+} libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language_VENEZUELAN;
 typedef struct {
   libpaymentpos_KNativePtr pinned;
 } libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Ticket;
@@ -553,6 +580,27 @@ typedef struct {
               } CardReadData;
               struct {
                 libpaymentpos_KType* (*_type)(void);
+                struct {
+                  libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType (*get)(); /* enum entry for AMEX. */
+                } AMEX;
+                struct {
+                  libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType (*get)(); /* enum entry for CREDIT. */
+                } CREDIT;
+                struct {
+                  libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType (*get)(); /* enum entry for CHARGE_CARD. */
+                } CHARGE_CARD;
+                struct {
+                  libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType (*get)(); /* enum entry for DEBIT. */
+                } DEBIT;
+                struct {
+                  libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType (*get)(); /* enum entry for DINNERS. */
+                } DINNERS;
+                struct {
+                  libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType (*get)(); /* enum entry for OTHER. */
+                } OTHER;
+              } CardType;
+              struct {
+                libpaymentpos_KType* (*_type)(void);
                 libpaymentpos_kref_com_ecopaynet_module_paymentpos_Currency (*Currency)(libpaymentpos_KInt seen1, const char* alpha, libpaymentpos_KInt code, const char* symbol, libpaymentpos_KInt fractionDigits, const char* description, libpaymentpos_kref_kotlinx_serialization_internal_SerializationConstructorMarker serializationConstructorMarker);
                 libpaymentpos_kref_com_ecopaynet_module_paymentpos_Currency (*Currency_)(const char* alpha, libpaymentpos_KInt code, const char* symbol, libpaymentpos_KInt fractionDigits, const char* description);
                 const char* (*get_alpha)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_Currency thiz);
@@ -623,12 +671,14 @@ typedef struct {
               } DeviceType;
               struct {
                 libpaymentpos_KType* (*_type)(void);
-                libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult (*DonationResult)(libpaymentpos_KInt seen1, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResultType result, const char* merchantCode, const char* commerceName, const char* commerceNumber, libpaymentpos_kref_kotlinx_datetime_LocalDateTime datetime, libpaymentpos_KLong amount, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Currency currency, const char* bankName, const char* authorizationCode, const char* operationNumber, const char* deniedCode, const char* deniedDescription, libpaymentpos_kref_kotlinx_serialization_internal_SerializationConstructorMarker serializationConstructorMarker);
+                libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult (*DonationResult)(libpaymentpos_KInt seen1, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResultType result, const char* merchantCode, const char* commerceName, const char* commerceNumber, libpaymentpos_kref_kotlinx_datetime_LocalDateTime datetime, libpaymentpos_KLong amount, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Currency currency, const char* bankName, const char* bankCsb, const char* authorizationCode, const char* operationNumber, const char* deniedCode, const char* deniedDescription, libpaymentpos_kref_kotlinx_serialization_internal_SerializationConstructorMarker serializationConstructorMarker);
                 libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult (*DonationResult_)();
                 libpaymentpos_KLong (*get_amount)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult thiz);
                 void (*set_amount)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult thiz, libpaymentpos_KLong set);
                 const char* (*get_authorizationCode)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult thiz);
                 void (*set_authorizationCode)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult thiz, const char* set);
+                const char* (*get_bankCsb)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult thiz);
+                void (*set_bankCsb)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult thiz, const char* set);
                 const char* (*get_bankName)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult thiz);
                 void (*set_bankName)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult thiz, const char* set);
                 const char* (*get_commerceName)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult thiz);
@@ -860,6 +910,12 @@ typedef struct {
                   struct {
                     libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for VALENCIAN. */
                   } VALENCIAN;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for BRAZILIAN. */
+                  } BRAZILIAN;
+                  struct {
+                    libpaymentpos_kref_com_ecopaynet_module_paymentpos_ExtraParameters_Language (*get)(); /* enum entry for VENEZUELAN. */
+                  } VENEZUELAN;
                 } Language;
                 struct {
                   libpaymentpos_KType* (*_type)(void);
@@ -1018,8 +1074,8 @@ typedef struct {
                   libpaymentpos_KType* (*_type)(void);
                   libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion (*_instance)();
                   void (*addLogEventHandler)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_Log listener);
-                  libpaymentpos_KBoolean (*cancelPreauthorization)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, const char* operationNumber, const char* authorizationCode, libpaymentpos_kref_kotlinx_datetime_LocalDate transactionDate, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_Transaction eventListener);
-                  libpaymentpos_KBoolean (*cancelPreauthorization_)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, const char* operationNumber, const char* authorizationCode, libpaymentpos_kref_kotlinx_datetime_LocalDate transactionDate, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_Transaction eventListener, libpaymentpos_kref_kotlin_collections_HashMap extraParameters);
+                  libpaymentpos_KBoolean (*cancelPreauthorization)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_KLong amount, const char* operationNumber, const char* authorizationCode, libpaymentpos_kref_kotlinx_datetime_LocalDate transactionDate, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_Transaction eventListener);
+                  libpaymentpos_KBoolean (*cancelPreauthorization_)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_KLong amount, const char* operationNumber, const char* authorizationCode, libpaymentpos_kref_kotlinx_datetime_LocalDate transactionDate, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_Transaction eventListener, libpaymentpos_kref_kotlin_collections_HashMap extraParameters);
                   libpaymentpos_KBoolean (*cardRead)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_CardRead eventListener);
                   libpaymentpos_KBoolean (*confirmPreauthorization)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_KLong amount, const char* operationNumber, const char* authorizationCode, libpaymentpos_kref_kotlinx_datetime_LocalDate transactionDate, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_Transaction eventListener);
                   libpaymentpos_KBoolean (*confirmPreauthorization_)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_PaymentPOS_Companion thiz, libpaymentpos_KLong amount, const char* operationNumber, const char* authorizationCode, libpaymentpos_kref_kotlinx_datetime_LocalDate transactionDate, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Events_Transaction eventListener, libpaymentpos_kref_kotlin_collections_HashMap extraParameters);
@@ -1167,7 +1223,7 @@ typedef struct {
               } TransactionRequestSignatureInformation;
               struct {
                 libpaymentpos_KType* (*_type)(void);
-                libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult (*TransactionResult)(libpaymentpos_KInt seen1, libpaymentpos_KInt seen2, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResultType result, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionType type, libpaymentpos_kref_com_ecopaynet_module_paymentpos_ReadingType readingType, libpaymentpos_KBoolean isVISAContactless, const char* merchantCode, const char* commerceName, const char* commerceAddress, const char* commerceTown, const char* commerceProvince, const char* commerceNumber, const char* serialNumber, libpaymentpos_kref_kotlinx_datetime_LocalDateTime datetime, const char* cardCardholderName, const char* cardPAN, const char* cardSequenceNumber, const char* cardAID, const char* cardAIDLabel, const char* transactionNumber, const char* terminalType, libpaymentpos_KBoolean isPINOnlineRequested, libpaymentpos_KLong amount, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Currency currency, const char* bankName, const char* arcCode, const char* authorizationCode, const char* operationNumber, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionValidationMethod validationMethod, libpaymentpos_kref_kotlin_ByteArray signatureBitmap, const char* transactionMethod, libpaymentpos_kref_kotlin_Long dccAmount, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Currency dccCurrency, const char* dccMessage, const char* reference, const char* deniedCode, const char* deniedDescription, libpaymentpos_KBoolean isGeneratedByAPI, const char* transactionHash, libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult donationResult, libpaymentpos_kref_kotlinx_serialization_internal_SerializationConstructorMarker serializationConstructorMarker);
+                libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult (*TransactionResult)(libpaymentpos_KInt seen1, libpaymentpos_KInt seen2, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResultType result, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionType type, libpaymentpos_kref_com_ecopaynet_module_paymentpos_ReadingType readingType, libpaymentpos_KBoolean isVISAContactless, const char* merchantCode, const char* commerceName, const char* commerceAddress, const char* commerceTown, const char* commerceProvince, const char* commerceNumber, const char* serialNumber, libpaymentpos_kref_kotlinx_datetime_LocalDateTime datetime, const char* cardCardholderName, const char* cardPAN, const char* cardSequenceNumber, const char* cardAID, const char* cardAIDLabel, libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType cardType, const char* cardMark, const char* transactionNumber, const char* terminalType, libpaymentpos_KBoolean isPINOnlineRequested, libpaymentpos_KLong amount, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Currency currency, const char* bankName, const char* bankCsb, const char* arcCode, const char* authorizationCode, const char* operationNumber, libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionValidationMethod validationMethod, libpaymentpos_kref_kotlin_ByteArray signatureBitmap, const char* transactionMethod, libpaymentpos_kref_kotlin_Long dccAmount, libpaymentpos_kref_com_ecopaynet_module_paymentpos_Currency dccCurrency, const char* dccMessage, const char* reference, const char* deniedCode, const char* deniedDescription, libpaymentpos_KBoolean isGeneratedByAPI, const char* transactionHash, libpaymentpos_kref_com_ecopaynet_module_paymentpos_DonationResult donationResult, libpaymentpos_kref_kotlinx_serialization_internal_SerializationConstructorMarker serializationConstructorMarker);
                 libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult (*TransactionResult_)();
                 libpaymentpos_KLong (*get_amount)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
                 void (*set_amount)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, libpaymentpos_KLong set);
@@ -1175,6 +1231,8 @@ typedef struct {
                 void (*set_arcCode)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, const char* set);
                 const char* (*get_authorizationCode)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
                 void (*set_authorizationCode)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, const char* set);
+                const char* (*get_bankCsb)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
+                void (*set_bankCsb)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, const char* set);
                 const char* (*get_bankName)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
                 void (*set_bankName)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, const char* set);
                 const char* (*get_cardAID)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
@@ -1183,10 +1241,14 @@ typedef struct {
                 void (*set_cardAIDLabel)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, const char* set);
                 const char* (*get_cardCardholderName)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
                 void (*set_cardCardholderName)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, const char* set);
+                const char* (*get_cardMark)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
+                void (*set_cardMark)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, const char* set);
                 const char* (*get_cardPAN)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
                 void (*set_cardPAN)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, const char* set);
                 const char* (*get_cardSequenceNumber)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
                 void (*set_cardSequenceNumber)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, const char* set);
+                libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType (*get_cardType)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
+                void (*set_cardType)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, libpaymentpos_kref_com_ecopaynet_module_paymentpos_CardType set);
                 const char* (*get_commerceAddress)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
                 void (*set_commerceAddress)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz, const char* set);
                 const char* (*get_commerceName)(libpaymentpos_kref_com_ecopaynet_module_paymentpos_TransactionResult thiz);
